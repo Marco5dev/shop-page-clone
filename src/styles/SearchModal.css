@@ -1,0 +1,136 @@
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.search-modal.light-mode {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.search-modal.dark-mode {
+  background-color: #fff;
+}
+
+.search-modal-container {
+  padding: 8px 16px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.search-input-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+.dark-mode .search-input-container {
+  background-color: #333;
+}
+
+.search-icon {
+  color: #666;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.dark-mode .search-icon {
+  color: #aaa;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 8px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+.dark-mode .search-input {
+  color: white;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.cancel-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.dark-mode .cancel-button {
+  color: #4d9fff;
+}
+
+.suggestions-container {
+  margin-top: 8px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.dark-mode .suggestions-container {
+  background-color: #222;
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.dark-mode .suggestion-item {
+  color: white;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.dark-mode .suggestion-item:hover {
+  background-color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .search-modal {
+    animation: none;
+  }
+}

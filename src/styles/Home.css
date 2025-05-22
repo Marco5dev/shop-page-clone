@@ -1,0 +1,490 @@
+:root {
+  --primary-color: #6b4f41;
+  --text-color: white;
+}
+
+/* Main container styling */
+.main-container {
+  min-height: fit-content;
+  position: relative;
+  overflow-x: hidden;
+  background: #8b7f78;
+  transition: background-color 0.5s ease;
+  /* Longer transition */
+}
+
+/* Hero section styling */
+.hero-section {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+  /* Enhance transitions */
+}
+
+/* Logo container styling */
+.logo-container {
+  height: 300px;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-logo {
+  max-width: 400px;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+  /* Longer transitions */
+}
+
+/* Rating container styling */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rating-score {
+  font-weight: bold;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.rating-count {
+  opacity: 0.9;
+  margin-left: 5px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* Button styling */
+.follow-btn {
+  padding: 0.5rem 1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.follow-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Brand info styling */
+.brand-details h2 {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.brand-info {
+  padding-bottom: 1.5rem;
+}
+
+/* More hover button effect */
+.moreHoverBackgroundButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.moreHoverBackgroundButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* White background */
+.white-bg {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+/* Card image container and zoom effect */
+.card-image-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.card-image-container:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Categories slider styling */
+.categories-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+/* Remove hover transform and shadow that made it look like a button */
+.category-item {
+  cursor: pointer;
+}
+
+/* Animation for arrows */
+.categories-arrow {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.categories-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Add smooth mode transitions for all text elements */
+.text-white,
+.text-black {
+  transition: color 0.5s ease !important;
+}
+
+/* Add transition for background changes */
+.bg-white,
+.bg-transparent {
+  transition: background-color 0.5s ease !important;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .logo-container {
+    height: 200px;
+  }
+  .brand-info {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+/* Add smooth scrolling to the page */
+html {
+  scroll-behavior: smooth;
+}
+
+.heartButtonHover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.heartButtonHover:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide-in {
+  animation: slide-in 0.3s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.3s forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.3s forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.3s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* Custom checkbox and radio styles */
+.checkbox,
+.radio-button {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-options span {
+  font-size: 14px;
+}
+
+.filter-sidebar-content h3,
+.filter-sidebar-content h4 {
+  color: #333;
+}
+
+/* Filter sidebar styles */
+.filter-sidebar {
+  position: fixed !important;
+  z-index: 999999 !important;
+  /* Extremely high z-index */
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.sidebar-overlay {
+  position: fixed !important;
+  z-index: 99999 !important;
+  /* Extremely high z-index */
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Custom radio buttons and checkboxes for sidebar */
+.radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.radio-circle .radio-selected {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Price slider styling */
+.price-slider {
+  position: relative;
+  height: 4px;
+  margin: 30px 0;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+}
+
+.slider-track-filled {
+  position: absolute;
+  height: 100%;
+  background-color: #6366F1;
+  left: 0;
+  right: 0;
+}
+
+.slider-thumb {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #6366F1;
+  border-radius: 50%;
+  top: -6px;
+  cursor: pointer;
+}
+
+.slider-thumb.left {
+  left: 0;
+}
+
+.slider-thumb.right {
+  right: 0;
+}
+
+.price-input {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+  width: 80px;
+}
+
+/* Action buttons */
+.reset-btn,
+.done-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  color: #333;
+}
+
+.done-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+}
+
+/* Active filter button */
+.active-filter-button {
+  background-color: black;
+  color: white;
+}
+
+/* Sidebar content styling */
+.filter-sidebar-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-sidebar-content h4 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-logo {
+    max-width: 180px;
+  }
+
+}
+
+.sidesFadeing {
+  background:
+    linear-gradient(to top, #8b7f78 0%, #00000000 20%)
+}
+
+@media screen and (min-width: 1600px) {
+  .sidesFadeing {
+    background:
+      linear-gradient(to top, #8b7f78 0%, #00000000 20%),
+      linear-gradient(to right, #8b7f78 0%, #00000000 20%),
+      linear-gradient(to left, #8b7f78 0%, #00000000 20%)
+  }
+}
+
+/* Responsive products grid using flexbox instead of grid */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.products-grid > * {
+  flex: 0 0 calc(50% - 0.5rem); /* 2 cards per row on very small screens */
+  max-width: calc(50% - 0.5rem);
+}
+
+/* Media queries for different screen sizes */
+@media screen and (min-width: 500px) {
+  .products-grid > * {
+    flex: 0 0 calc(33.333% - 0.5rem); /* 3 cards per row on small screens */
+    max-width: calc(33.333% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .products-grid > * {
+    flex: 0 0 calc(25% - 0.5rem); /* 4 cards per row on medium screens */
+    max-width: calc(25% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .products-grid > * {
+    flex: 0 0 calc(20% - 0.5rem); /* 5 cards per row on large screens */
+    max-width: calc(20% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .products-grid > * {
+    flex: 0 0 calc(16.666% - 0.5rem); /* 6 cards per row on extra large screens */
+    max-width: calc(16.666% - 0.5rem);
+  }
+}
+
+/* Best sellers cards responsive styling */
+.best-sellers-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.best-sellers-cards > a {
+  flex: 0 0 calc(50% - 0.5rem); /* 2 cards per row on very small screens */
+  max-width: calc(50% - 0.5rem);
+  margin: 0 !important; /* Remove the margin to rely on gap for spacing */
+}
+
+/* Media queries for best sellers cards */
+@media screen and (min-width: 576px) {
+  .best-sellers-cards > a {
+    flex: 0 0 calc(33.333% - 0.5rem); /* 3 cards per row on small screens */
+    max-width: calc(33.333% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .best-sellers-cards > a {
+    flex: 0 0 calc(25% - 0.5rem); /* 4 cards per row on large screens */
+    max-width: calc(25% - 0.5rem);
+  }
+}

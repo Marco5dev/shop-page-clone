@@ -1,0 +1,246 @@
+/* Dropdown animation */
+.suggestions-enter {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  max-height: 0;
+  margin-top: -2px !important;
+}
+
+.suggestions-enter-active {
+  opacity: 1;
+  transform: scaleY(1);
+  max-height: 500px;
+  margin-top: -2px !important;
+  transition: opacity 200ms ease, transform 200ms ease, max-height 200ms ease;
+}
+
+.suggestions-exit {
+  opacity: 1;
+  transform: scaleY(1);
+  max-height: 500px;
+  margin-top: -2px !important;
+}
+
+.suggestions-exit-active {
+  opacity: 0;
+  transform: scaleY(0);
+  max-height: 0;
+  transform-origin: top center;
+  margin-top: -2px !important;
+  transition: opacity 200ms ease, transform 200ms ease, max-height 200ms ease;
+}
+
+/* Input border animation */
+.search-input-container {
+  transition: none;
+  border-radius: 1.25rem;
+  box-shadow: none;
+  outline: none;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+
+.search-input-container.focus {
+  animation-name: inputBorderChange;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  border-bottom-width: 0;
+}
+
+@keyframes inputBorderChange {
+  0% {
+    border-color: #ddd;
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+  }
+
+  100% {
+    border-color: var(#ddd);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-width: 0;
+  }
+}
+
+/* Animation for border changes when closing */
+.search-input-container.unfocus {
+  animation: inputBorderRevert 200ms ease-out forwards;
+}
+
+@keyframes inputBorderRevert {
+  0% {
+    border-color: var(#ddd);
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  100% {
+    border-color: #ddd;
+    border-radius: 1.25rem;
+  }
+}
+
+/* Container animation */
+.suggestions-container {
+  transform-origin: top center;
+  transition: none;
+  border: 2px solid var(#ddd) !important;
+  border-top: none !important;
+  border-radius: 0 0 1.25rem 1.25rem !important;
+  background-color: white;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  animation: containerGrow 200ms ease-out forwards;
+  animation-delay: 200ms;
+}
+
+@keyframes containerGrow {
+  0% {
+    max-height: 0;
+    opacity: 0.8;
+  }
+
+  100% {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+.suggestions-container-collapse {
+  animation: containerCollapse 200ms ease-out forwards;
+}
+
+@keyframes containerCollapse {
+  0% {
+    max-height: 500px;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  100% {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+/* Item animations */
+.suggestion-item {
+  opacity: 0;
+  animation: itemAppear 200ms ease-out forwards;
+  animation-delay: calc(400ms + (var(--item-index, 0) * 30ms));
+}
+
+@keyframes itemAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-item-exit {
+  animation: itemDisappear 150ms ease-out forwards;
+  animation-delay: calc(var(--reverse-index, 0) * 30ms);
+}
+
+@keyframes itemDisappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Fix for the gap issue */
+.search-input-container.focus+.suggestions-container {
+  margin-top: -2px !important;
+}
+
+/* Animated placeholder transitions */
+.placeholder-transparent::placeholder {
+  color: transparent !important;
+}
+
+/* Animated placeholder styling */
+.animated-placeholder {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: fadeIn 0.5s ease forwards;
+  color: #6c757d;
+  padding-left: 0;
+}
+
+.animated-placeholder.exiting {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Fix for placeholder color */
+.custom-placeholder::placeholder {
+  opacity: 0.7 !important;
+  color: var(--placeholder-color, inherit) !important;
+}
+
+/* Add more specific selectors for different browsers */
+input.custom-placeholder::placeholder,
+input.custom-placeholder::-webkit-input-placeholder,
+input.custom-placeholder::-moz-placeholder,
+input.custom-placeholder:-ms-input-placeholder,
+input.custom-placeholder:-moz-placeholder {
+  color: var(--placeholder-color, inherit) !important;
+}
+
+/* Apply custom styles to the container */
+.custom-input-container input::placeholder {
+  color: var(--placeholder-color, inherit) !important;
+  opacity: 0.7 !important;
+}
+
+/* This ensures our placeholder color is properly applied across browsers */
+input.custom-placeholder::placeholder,
+input.custom-placeholder::-webkit-input-placeholder,
+input.custom-placeholder::-moz-placeholder,
+input.custom-placeholder:-ms-input-placeholder,
+input.custom-placeholder:-moz-placeholder {
+  color: inherit !important;
+}

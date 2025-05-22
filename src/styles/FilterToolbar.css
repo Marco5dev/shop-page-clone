@@ -1,0 +1,348 @@
+.filter-toolbar .p-dropdown {
+  background-color: transparent !important;
+}
+
+.filter-toolbar .p-dropdown .p-dropdown-label {
+  padding: 0.5rem 1rem;
+  color: inherit !important;
+}
+
+.filter-toolbar .p-button.active {
+  font-weight: 500;
+}
+
+/* Button styling for filter toolbar to match image exactly */
+.filter-toolbar .p-button {
+  border-radius: 6px !important;
+}
+
+.filter-toolbar .p-button .p-button-label {
+  font-weight: normal;
+}
+
+.filter-toolbar .p-button.active .p-button-label {
+  font-weight: 500;
+}
+
+.filter-toolbar .p-button-icon {
+  font-size: 0.75rem;
+}
+
+/* Product count */
+.product-count {
+  font-size: 0.875rem;
+}
+
+/* Gap adjustments */
+.filter-toolbar {
+  padding: 0.75rem 0;
+}
+
+/* Remove PrimeReact default styling */
+.filter-toolbar .p-button:focus {
+  box-shadow: none !important;
+}
+
+.filter-toolbar .p-button:hover {
+  background-color: transparent !important;
+}
+
+/* Dark dropdown styling */
+.dark-dropdown {
+  background-color: #464646 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.dark-dropdown .p-dropdown-items-wrapper {
+  background-color: transparent;
+}
+
+.dark-dropdown .p-dropdown-item {
+  color: white !important;
+  padding: 0.75rem 1rem;
+}
+
+.dark-dropdown .p-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-dropdown .p-dropdown-item.p-highlight {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* Light dropdown styling */
+.light-dropdown {
+  background-color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #333 !important;
+}
+
+.light-dropdown .p-dropdown-items-wrapper {
+  background-color: transparent;
+}
+
+.light-dropdown .p-dropdown-item {
+  color: #333 !important;
+  padding: 0.75rem 1rem;
+}
+
+.light-dropdown .p-dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-dropdown .p-dropdown-item.p-highlight {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  color: #333 !important;
+}
+
+/* Custom dropdown styling */
+.custom-dropdown {
+  height: 38px;
+}
+
+.custom-dropdown .p-dropdown-trigger {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+.custom-dropdown .p-dropdown-label {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Make dropdown look like a button */
+.dropdown-panel {
+  margin-top: 5px;
+}
+
+.dropdown-trigger {
+  color: inherit !important;
+}
+
+.dropdown-label {
+  font-size: 0.875rem;
+}
+
+/* Dropdown items specific styling */
+.dropdown-item-light,
+.dropdown-item-dark {
+  transition: background-color 0.2s;
+  border-radius: 2px;
+  margin: 2px 0;
+}
+
+/* Fix dropdown width to match the container */
+.p-dropdown-panel {
+  min-width: fit-content !important;
+  z-index: 100;
+}
+
+.filter-toolbar .p-dropdown:focus,
+.filter-toolbar .p-dropdown:active {
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Sidebar z-index control and body scroll lock */
+.body-scroll-lock {
+  overflow: hidden !important;
+}
+
+/* Make sure sidebar and overlay have higher z-index than everything else */
+.sidebar-overlay {
+  z-index: 999990 !important;
+}
+
+.filter-sidebar {
+  z-index: 999999 !important;
+}
+
+/* When sidebar is active, reduce header z-index */
+.sidebar-active header {
+  z-index: 99 !important;
+}
+
+/* Add styles for the dropdown components */
+.dropdown-content {
+  background-color: transparent;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-overlay {
+  background-color: rgba(255, 255, 225, 1);
+  border-radius: 16px;
+  box-shadow: 0 25px 25px 18px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: calc(100vw - 20px);
+  /* Prevent overflow on small screens */
+  padding: 10px;
+}
+
+/* Add cursor pointer styles for clickable elements */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.radio-circle:hover {
+  border-color: #999;
+}
+
+.radio-selected {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: black;
+  transition: all 0.2s;
+}
+
+.reset-btn {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: normal;
+  color: black;
+  width: 100%;
+}
+
+.done-btn {
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+}
+
+/* Enhanced Price slider styling */
+.price-slider {
+  position: relative;
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  margin: 30px 0;
+  cursor: pointer;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slider-track-filled {
+  position: absolute;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  transition: left 0.05s ease, right 0.05s ease;
+}
+
+.slider-thumb {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  cursor: grab;
+  z-index: 10;
+  touch-action: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s, background-color 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slider-thumb:hover {
+  transform: translateX(-50%) scale(1.1);
+  background-color: #f5f5f5;
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+  transform: translateX(-50%) scale(1.1);
+  background-color: #f0f0f0;
+}
+
+/* Make the hit area larger for the thumbs */
+.slider-thumb::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+}
+
+/* Style the input boxes */
+.price-input {
+  width: 65px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.price-input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .slider-thumb {
+    width: 28px;
+    height: 28px;
+    top: -12px;
+  }
+
+  .slider-thumb::before {
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .price-input {
+    width: 70px;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Add user-select utilities */
+.user-select-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

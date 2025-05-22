@@ -1,0 +1,156 @@
+.footer {
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+}
+
+.footer-light {
+    background-color: #fff;
+    color: #000;
+}
+
+.footer-dark {
+    background-color: #8b7f78;
+    color: #fff;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.footer-sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.brand-section {
+    flex: 0 0 25%;
+}
+
+.footer-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 65%;
+    justify-content: space-between;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.app-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.app-stores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.app-store-link img,
+.google-play-link img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-links {
+    color: #707070;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
+}
+
+.powered-by {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.powered-by a {
+    color: inherit;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.language-selector {
+    cursor: pointer;
+}
+
+.copyright {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer-sections-container {
+        flex-direction: column;
+    }
+
+    .brand-section,
+    .footer-links-container {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
