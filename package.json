@@ -8,12 +8,9 @@
   "description": "A front-end concept build of shop.app demonstrating UI/UX implementation skills",
   "scripts": {
     "dev": "vite",
-    "build": "react-scripts build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
